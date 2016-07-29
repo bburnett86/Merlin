@@ -1,0 +1,17 @@
+<div id = "container">
+  <%= form_tag("/weathers", id: "locationForm") do %>
+    <div>
+      <p>City and State:</p>
+        <%= text_field_tag('City and State')%>
+      <p>Use Current Location  <%= radio_button_tag 'blog_post', true %></p>
+    </div>
+    <% if @errors %>
+      <div class = "center error">
+        <% @errors.each do |error| %>
+          <%= error %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class = "center"><%= submit_tag "Search Weather", :id=> "submitButton" %></div>
+  <% end %>
+</div>

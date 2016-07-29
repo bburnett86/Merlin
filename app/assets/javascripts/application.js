@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $("#container").on("submit", "#locationForm", function(){
+    event.preventDefault();
+
+    var weather_data = $(this).serialize()
+    console.log(weather_data)
+
+    var request = $.ajax({
+      method: $(this).attr("method"),
+      // url: "http://api.openweathermap.org/data/2.5/forecast/weather?q=London,uk&APPID=24d25b755229b50f820c31dea0daae1e",77
+      data: weather_data,
+    });
+    request.done(function(weather){
+      // console.log(weather.city)
+    });
+  });
+});
