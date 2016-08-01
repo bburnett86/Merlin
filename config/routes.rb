@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'weathers#index'
 
+  resources :current_locations, only: [:new, :create, :show]
+
+  resources :city_states, only: [:new, :create, :show]
+
+  resources :zipcode, only: [:new, :create, :show]
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
