@@ -1,0 +1,19 @@
+<div id = "container-fluid">
+  <div class = "jumbotron center-text">
+    <%= form_tag(city_states_path, id: "city_state_form") do %>
+      <div>
+        <p>City and State:</p>
+          <%= text_field_tag('destination', "", class: "search")%>
+          <%= hidden_field_tag('city_state', 'true') %>
+      </div>
+      <% if @errors %>
+        <div class = "center error">
+          <% @errors.each do |error| %>
+            <%= error %>
+          <% end %>
+        </div>
+      <% end %>
+      <div class = "center"><%= submit_tag "Search Weather", :id=> "submitButton" %></div>
+    <% end %>
+  </div>
+</div>

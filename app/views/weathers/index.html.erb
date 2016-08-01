@@ -1,17 +1,17 @@
-<div id = "container">
-  <%= form_tag("/weathers", id: "locationForm") do %>
-    <div>
-      <p>City and State:</p>
-        <%= text_field_tag('City and State')%>
-      <p>Use Current Location  <%= radio_button_tag 'blog_post', true %></p>
-    </div>
-    <% if @errors %>
-      <div class = "center error">
-        <% @errors.each do |error| %>
-          <%= error %>
-        <% end %>
+<div id = "container-fluid">
+  <div class = "jumbotron center-text">
+    <h1>Welcome to Weather Wizard</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <p><%= link_to "City And State", new_city_state_path, id: "city_state" %></p>
       </div>
-    <% end %>
-    <div class = "center"><%= submit_tag "Search Weather", :id=> "submitButton" %></div>
-  <% end %>
+      <div class="col-md-4">
+        <p><%= link_to "Zipcode", new_zipcode_path, id: "zipcode" %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= link_to "Current Location", new_current_location_path, id: "current_location" %></p>
+      </div>
+    <div class="row">
+  </div>
 </div>
+
